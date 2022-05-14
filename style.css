@@ -1,0 +1,128 @@
+html, body {
+ margin: 0%;
+ padding: 0%;
+ box-sizing: border-box;
+
+}
+input,textarea,select,button{
+  all: unset;
+}
+header{
+  display: flex;
+  box-sizing: content-box;
+  width: 100%;
+  height: 10vh;
+  background-color: rgba(86, 167, 243, 0.938);
+}
+header h1{
+  font-family: sans serif;
+  font-size: 30px;
+  margin:20px 12px;
+  color: white;
+}
+main{
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  margin: 1%;
+  grid-gap: 1%;
+ 
+ 
+}
+
+section {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-rows: 100px;
+  gap: 0px;
+  background-color: rgba(238, 238, 238, 0.555);
+ border: 1px solid rgb(86, 167, 243, 0.938);
+ 
+}
+ section .title{
+   display: flex;
+   justify-content: center;
+   background-color: rgb(86, 167, 243, 0.938);
+  
+ }
+ section h2{
+   color: white;
+ }
+
+ form .group-input{
+ margin: 12px;
+ display: grid;
+ grid-template-columns:  100%;
+  
+ }
+ form label{
+   color:  rgb(86, 167, 243, 0.938);;
+ }
+form input,select,textarea{
+ height: 30px;
+ border: white;
+  border-radius: 5px ;
+  -webkit-appearance: none;
+  background-color: white;
+}
+textarea{
+  height: 100px;
+}
+.preview img{
+  margin-left: 60%;
+  width: 200px;
+  height: 200px;
+
+}
+
+.btns{
+  display: flex;
+  justify-content: space-between;
+  margin:10% 5%;
+  
+}
+.btn-create{
+  width:200px;
+  height:50px ;
+  background-color: rgb(86, 167, 243, 0.938);
+  text-align: center;
+  padding: 1%;
+}
+.btn-reset{
+  width:200px;
+  height:50px ;
+  background-color: red;
+  text-align: center;
+  padding: 1%;
+}
+section .list{
+  display: flex;
+  flex-direction: column;
+}
+section .contact{
+  
+ box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 25% 65% 10%;
+  border: solid 0.5px rgb(86, 167, 243, 0.938);
+ height: auto;
+}
+ .img{
+  width: 100px;
+  height: 100px;
+  background-color: black;
+  margin: 18px;
+  border-radius: 50px;
+}
+.profile{
+  width: 100px;
+  height: 100px;
+  background-color: black;
+  margin: 18px;
+  border-radius: 50px;
+
+}
+button .closebtn{
+  font-size: 35px;
+  color: red;
+}

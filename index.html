@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+ <header>
+   <h1>Répertoire de contact</h1>
+ </header>
+ <main>
+   <section class="form">
+     <div class="title">
+       <h2>Formulaire de contact</h2>
+     </div>
+     <div>
+     <form action="">
+       <input type="hidden" id="numero" ></span>
+       <div class="group-input">
+         <label for="firstname">Prenom</label>
+         <input type="text" firstname="firstname" id="firstname" required>
+       </div>
+       <div class="group-input">
+          <label for="name">Nom</label>
+          <input type="text" name="name" id="name" required>
+        </div>
+        <div class="group-input">
+          <label for="group">Group</label>
+          <select name="group" id="group" required>
+            <option value="Amis" >Amis</option>
+            <option value="Famille" >Famille</option>
+            <option value="Collègue" >Collègue</option>
+            
+          </select>
+        </div>
+        <div class="group-input">
+          <label for="bio">Bio</label>
+          <textarea name="bio" id="bio"   required></textarea>
+        </div>
+       <div class="img-input">
+          <label for="name"></label>
+          <input type="file" name="picture" id="picture" accept=".jpg,.png, .gif" required>
+        </div> 
+        <div class="preview">
+            <img id="preview" src=" " />
+        </div> 
+        <div class="btns">
+         <div >
+          <button class="btn-create" value="creer" type="submit" id="creer">Créer</button> 
+          </div>
+        
+        <button class="btn-reset "value="reset" id="reinit" >REINT</button> 
+        
+        </div>
+     </form>
+    
+    </div>
+   </section>
+   <section class="list">
+      <div class="title">
+        <h2>Liste de contact</h2>
+      </div>
+      <div class="contact" >
+        <div class="im">
+          <img src="" alt="" class="profile">
+        </div>
+        <div class="detail-contact" >
+         <h3 ><span id="prenom" >Prénom</span>  <span id="nom"> Nom</span></h3>
+          <span><h3 id="groupe">Groupe</h3></span>
+          <p id="plus">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem quo atque, sunt distinctio numquam saepe rem quaerat corrupti expedita facere sapiente porro dignissimos fuga ipsam ut eligendi. Libero, veniam optio!</p>
+        </div>
+        <div class="close">
+          <button class="closebtn" id="remove" >X(</button> 
+        </div>
+      </div>
+   
+
+    
+      </div>
+   </section>
+ </main>
+ 
+
+
+  <script src="script.js"></script>
+</body>
+
+</html>
