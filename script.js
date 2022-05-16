@@ -29,7 +29,6 @@ Reinit.addEventListener("click", function(e){
 form.addEventListener('submit', function(e){ 
     
     e.preventDefault();
-   
     profil.src=preveiw.src
     let numero = document.querySelector("#numero");
     let firstnameval=document.querySelector("#firstname").value
@@ -61,18 +60,10 @@ form.addEventListener('submit', function(e){
         this.reset();
         preveiw.src=" ";
     }
-    const removeContact= newContact.querySelector("#remove")
-    removeContact.addEventListener('click', function(e){
-    newContact.remove()
-    })
-       
-
     /* modification du contact*/ 
     const modifContact= newContact.querySelector(".detail-contact")
     modifContact.addEventListener('click', function(){
         modification=true
-    if(modification==true){  
-       
         document.querySelector("#creer").textContent="modif"
         const  imgRequired=document.querySelector("#picture").required=false
         document.querySelector("#numeroId").value=newContact.querySelector("#identifiant").textContent
@@ -80,33 +71,29 @@ form.addEventListener('submit', function(e){
         document.querySelector("#name").value= newContact.querySelector("#nom").textContent
         document.querySelector("#bio").value=newContact.querySelector("#plus").textContent
         document.querySelector("#group").value=newContact.querySelector("#groupe").textContent
-        
         preveiw.src=newContact.querySelector(".profile").src
         const btnModif=document.querySelector("#creer")
-        btnModif.addEventListener('click', function(){
-            if(newContact.querySelector("#identifiant").textContent==document.querySelector("#numeroId").value){ 
-            newContact.querySelector("#prenom").textContent=document.querySelector("#firstname").value
-            newContact.querySelector("#nom").textContent= document.querySelector("#name").value
-            newContact.querySelector("#plus").textContent= document.querySelector("#bio").value
-            newContact.querySelector("#groupe").textContent=  document.querySelector("#group").value
-            if(img.files[0] === undefined){
-                newContact.querySelector(".profile").src= preveiw.src
-           }else{ newContact.querySelector(".profile").src=URL.createObjectURL(img.files[0])   }
-            console.log( divContact);
-            console.log( newContact);
-            preveiw.src=" ";  
-            
-        }
-        e.stopPropagation();                  
+        form.addEventListener('submit', function(){
+            if(modification==true){ 
+                if(newContact.querySelector("#identifiant").textContent==document.querySelector("#numeroId").value){ 
+                    newContact.querySelector("#prenom").textContent=document.querySelector("#firstname").value
+                    newContact.querySelector("#nom").textContent= document.querySelector("#name").value
+                    newContact.querySelector("#plus").textContent= document.querySelector("#bio").value
+                    newContact.querySelector("#groupe").textContent=  document.querySelector("#group").value
+                    if(img.files[0] === undefined){
+                        newContact.querySelector(".profile").src= preveiw.src
+                    }else{ newContact.querySelector(".profile").src=URL.createObjectURL(img.files[0])   
+                    }
+                        preveiw.src=" ";  
+                }
+            }
+                               
         })
-
-    }
+    })
+    const removeContact= newContact.querySelector("#remove")
+    removeContact.addEventListener('click', function(e){
+    newContact.remove()
 })
-
-
-     
-
-
 
 })
 

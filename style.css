@@ -122,7 +122,7 @@ section .contact{
   border-radius: 50px;
 
 }
-button .closebtn{
+button i{
   font-size: 35px;
   color: red;
 }
