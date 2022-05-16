@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width">
   <title>replit</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:wght@400;900&family=Libre+Baskerville&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -19,7 +20,7 @@
      </div>
      <div>
      <form action="">
-       <input type="hidden" id="numero" ></span>
+       <input type="hidden" id="numeroId" ></span>
        <div class="group-input">
          <label for="firstname">Prenom</label>
          <input type="text" firstname="firstname" id="firstname" required>
@@ -69,12 +70,13 @@
           <img src="" alt="" class="profile">
         </div>
         <div class="detail-contact" >
+          <span type="hidden" id="identifiant"></span>
          <h3 ><span id="prenom" >Prénom</span>  <span id="nom"> Nom</span></h3>
           <span><h3 id="groupe">Groupe</h3></span>
           <p id="plus">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem quo atque, sunt distinctio numquam saepe rem quaerat corrupti expedita facere sapiente porro dignissimos fuga ipsam ut eligendi. Libero, veniam optio!</p>
         </div>
         <div class="close">
-          <button class="closebtn" id="remove" >X(</button> 
+          <button class="closebtn" id="remove" >X(</button> <i class="las la-times"></i>
         </div>
       </div>
    

@@ -6,6 +6,7 @@ const profil=document.querySelector(".profile")
     img.addEventListener('change', function() {   
         preveiw.src=URL.createObjectURL(this.files[0])
     })
+    console.log(img.files[0]);
 /* on cache la boite modele du contact */
 const divContact=document.querySelector(".contact")
         divContact.style.display = 'none';
@@ -26,7 +27,9 @@ Reinit.addEventListener("click", function(e){
 
 /*traitement quand le formulaire est soumis*/ 
 form.addEventListener('submit', function(e){ 
+    
     e.preventDefault();
+   
     profil.src=preveiw.src
     let numero = document.querySelector("#numero");
     let firstnameval=document.querySelector("#firstname").value
@@ -47,7 +50,7 @@ form.addEventListener('submit', function(e){
     
     const divId= Math.random();
     let ContactId=document.querySelector("#identifiant")
-    ContactId.textContent="divId"
+    ContactId.textContent=divId
    
     let newContact= divContact.cloneNode(true);
     if(modification==false){ 
@@ -58,33 +61,43 @@ form.addEventListener('submit', function(e){
         this.reset();
         preveiw.src=" ";
     }
-    const removeContact= document.querySelector(".contact")
+    const removeContact= newContact.querySelector("#remove")
     removeContact.addEventListener('click', function(e){
-    removeContact.remove();
-})
+    newContact.remove()
+    })
        
 
-/* modification du contact*/ 
-newContact.addEventListener('click', function(){
-    modification=true
+    /* modification du contact*/ 
+    const modifContact= newContact.querySelector(".detail-contact")
+    modifContact.addEventListener('click', function(){
+        modification=true
     if(modification==true){  
+       
         document.querySelector("#creer").textContent="modif"
         const  imgRequired=document.querySelector("#picture").required=false
-        let newdivId= newContact.querySelector("#id").value
+        document.querySelector("#numeroId").value=newContact.querySelector("#identifiant").textContent
         document.querySelector("#firstname").value= newContact.querySelector("#prenom").textContent
         document.querySelector("#name").value= newContact.querySelector("#nom").textContent
         document.querySelector("#bio").value=newContact.querySelector("#plus").textContent
         document.querySelector("#group").value=newContact.querySelector("#groupe").textContent
+        
         preveiw.src=newContact.querySelector(".profile").src
         const btnModif=document.querySelector("#creer")
         btnModif.addEventListener('click', function(){
-
-            
+            if(newContact.querySelector("#identifiant").textContent==document.querySelector("#numeroId").value){ 
+            newContact.querySelector("#prenom").textContent=document.querySelector("#firstname").value
+            newContact.querySelector("#nom").textContent= document.querySelector("#name").value
+            newContact.querySelector("#plus").textContent= document.querySelector("#bio").value
+            newContact.querySelector("#groupe").textContent=  document.querySelector("#group").value
+            if(img.files[0] === undefined){
+                newContact.querySelector(".profile").src= preveiw.src
+           }else{ newContact.querySelector(".profile").src=URL.createObjectURL(img.files[0])   }
             console.log( divContact);
             console.log( newContact);
-            console.log(newdivI);
-
             preveiw.src=" ";  
+            
+        }
+        e.stopPropagation();                  
         })
 
     }
